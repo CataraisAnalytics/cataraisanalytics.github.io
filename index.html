@@ -39,10 +39,16 @@
     .hero-left .hero-sub { margin-left: auto; margin-right: auto; }
     .hero-left .hero-tag { justify-content: center; }
     .hero-tag { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 32px; display: flex; align-items: center; gap: 12px; }
+    .hero-tag-badge { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--white); border: 1px solid var(--border); padding: 10px 20px; margin-bottom: 32px; display: inline-flex; align-items: center; }
     .hero-headline { font-family: 'Playfair Display', serif; font-size: clamp(46px, 4.5vw, 74px); font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; margin-bottom: 32px; }
     .hero-headline em { font-style: italic; color: var(--mid); }
     .hero-sub { color: var(--mid); font-size: 18px; line-height: 1.85; max-width: 440px; margin-bottom: 56px; }
     .hero-actions { display: flex; gap: 16px; align-items: center; }
+    .hero-demo { display: flex; flex-direction: column; align-items: center; text-align: center; max-width: 480px; border: 1px solid var(--border); background: #0d0d0d; padding: 40px 40px 36px; }
+    .hero-demo-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+    .hero-demo-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--white); margin-bottom: 14px; }
+    .hero-demo-title em { font-style: italic; color: var(--mid); }
+    .hero-demo-desc { font-size: 15px; color: var(--mid); line-height: 1.75; margin-bottom: 28px; }
     .btn-primary { background: var(--white); color: var(--black); padding: 16px 36px; font-family: 'DM Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; border: none; cursor: pointer; transition: opacity 0.2s; text-decoration: none; display: inline-block; }
     .btn-primary:hover { opacity: 0.85; }
     .hero-right { padding: 100px 60px 80px; display: flex; flex-direction: column; justify-content: center; }
@@ -77,6 +83,13 @@
     .section { padding: 120px 60px; border-bottom: 1px solid var(--border); }
     .section-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 72px; }
     .engagement-section .section-header { margin-bottom: 24px; }
+    .demo-callout { margin-top: 64px; border: 1px solid var(--border); padding: 48px; display: flex; justify-content: space-between; align-items: center; gap: 40px; background: #0d0d0d; }
+    .demo-callout-text { max-width: 560px; }
+    .demo-callout-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 12px; }
+    .demo-callout-title { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--white); margin-bottom: 14px; }
+    .demo-callout-title em { font-style: italic; color: var(--mid); }
+    .demo-callout-desc { font-size: 16px; color: var(--mid); line-height: 1.75; }
+    .demo-callout .btn-primary { flex-shrink: 0; }
     .section-label { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); margin-bottom: 16px; }
     .section-title { font-family: 'Playfair Display', serif; font-size: clamp(38px, 4vw, 58px); font-weight: 700; line-height: 1.1; }
     .section-title em { font-style: italic; color: var(--mid); }
@@ -222,9 +235,11 @@
       .nav-logo { font-size: 18px; }
       .hero { grid-template-columns: 1fr; }
       .hero-left { padding: 60px 20px; border-right: none; border-bottom: 1px solid var(--border); }
+      .hero-demo { padding: 28px 24px 24px; max-width: 100%; }
       .hero-right { padding: 60px 20px; }
       .section { padding: 64px 20px; }
       .engagement-section { padding: 64px 20px 32px; }
+      .demo-callout { flex-direction: column; align-items: flex-start; padding: 32px 24px; gap: 24px; }
       .contact-section { grid-template-columns: 1fr; padding: 48px 20px; gap: 36px; }
       .about-section { grid-template-columns: 1fr; padding: 64px 20px; gap: 40px; }
       .section-header { flex-direction: column; gap: 20px; align-items: flex-start; }
@@ -250,7 +265,6 @@
   <nav>
     <a href="#" class="nav-logo">Catarais<span>Analytics</span></a>
     <ul class="nav-links">
-      <li><a href="#about">What We Do</a></li>
       <li><a href="#questions">What We Solve</a></li>
       <li><a href="#benefits">How We Add Value</a></li>
       <li><a href="#engagement">How We Work</a></li>
@@ -260,126 +274,18 @@
 
   <section class="hero">
     <div class="hero-left fade-up">
-      <div class="hero-tag">Data Analytics - Consulting &amp; Implementation</div>
+      <div class="hero-tag-badge">Inventory Decision Intelligence</div>
       <h1 class="hero-headline">
         Unlocking <em>Value</em><br/>In Your<br/>Supply Chain
       </h1>
       <p class="hero-sub">
-        We are a catalyst for businesses — Our analytics-led approach crafts solutions to highly specific pain-points faced by businesses and delivers measurable impact.
+        Built for businesses with multiple SKUs, uncertain demand, and lead times squeezed on both ends: long to procure, short to deliver.
       </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">Start a Conversation</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="about-section" id="about">
-    <div class="about-content fade-up">
-      <div class="section-label">What We Do</div>
-      <h2 class="about-title">A Catalyst for <em>Businesses</em></h2>
-      <div class="pillars">
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L3 7l9 5 9-5-9-5z"/>
-              <path d="M3 12l9 5 9-5"/>
-              <path d="M3 17l9 5 9-5"/>
-            </svg>
-          </div>
-          <div class="pillar-text">
-            <div class="pillar-header">
-              <strong>Hyper-Customised Solutions</strong>
-              <span class="pillar-caret"></span>
-            </div>
-            <p>Our analytics-driven solution is built around your unique business model, costs, constraints and data landscape.</p>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <polyline points="3,17 9,11 13,15 21,7"/>
-              <polyline points="15,7 21,7 21,13"/>
-            </svg>
-          </div>
-          <div class="pillar-text">
-            <div class="pillar-header">
-              <strong>Solutions with Measurable Impact</strong>
-              <span class="pillar-caret"></span>
-            </div>
-            <p>Our solutions deliver tangible and intangible improvements in metrics that matter to you — inventory turnover ratio, fill rates, stockout frequency, carrying costs, and planning cycle times.</p>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="7" cy="12" r="3"/>
-              <circle cx="17" cy="12" r="3"/>
-              <line x1="10" y1="12" x2="14" y2="12"/>
-              <path d="M4 12h0M20 12h0"/>
-            </svg>
-          </div>
-          <div class="pillar-text">
-            <div class="pillar-header">
-              <strong>End-to-End Partnership</strong>
-              <span class="pillar-caret"></span>
-            </div>
-            <p>From discovery through deployment and beyond — we stay with you across the full journey.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="about-visual fade-up">
-      <div class="section-label" style="visibility: hidden;">&nbsp;</div>
-      <h2 class="about-title" style="white-space: nowrap;">Solving For Your <em>Supply Chain</em></h2>
-      <div class="pillars pillars-plain">
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <rect x="3" y="7" width="18" height="13"/>
-              <polyline points="8,7 8,3 16,3 16,7"/>
-              <line x1="3" y1="12" x2="21" y2="12"/>
-            </svg>
-          </div>
-          <div class="pillar-text">
-            <div class="pillar-header">
-              <strong>Inventory Optimisation</strong>
-              <span class="pillar-caret"></span>
-            </div>
-            <p>ML-based replenishment recommendation system that reduces stockouts and overstocking and removes manual effort.</p>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="8" cy="8" r="4"/>
-              <circle cx="16" cy="16" r="4"/>
-              <line x1="11" y1="11" x2="13" y2="13"/>
-            </svg>
-          </div>
-          <div class="pillar-text">
-            <div class="pillar-header">
-              <strong>Product &amp; Customer Segmentation</strong>
-              <span class="pillar-caret"></span>
-            </div>
-            <p>Prioritise your most critical SKUs and highest-value customers with precision targeting.</p>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="12" cy="5" rx="8" ry="2.5"/>
-              <path d="M4 5v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5V5"/>
-              <path d="M4 11v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-6"/>
-            </svg>
-          </div>
-          <div class="pillar-text">
-            <div class="pillar-header">
-              <strong>Data Ecosystem Streamlining</strong>
-              <span class="pillar-caret"></span>
-            </div>
-            <p>Unified, clean data pipelines that connect your systems and power decisions.</p>
-          </div>
-        </div>
+      <div class="hero-demo fade-up">
+        <div class="hero-demo-label">Try It Yourself</div>
+        <div class="hero-demo-title">See the Replenishment Engine <em>in Action</em></div>
+        <div class="hero-demo-desc">Attach your historical sales data, add your MOQ and lead time, and see the orders we would have recommended. Then compare them against what you actually ordered.</div>
+        <a href="https://idireplenishmentrecommendationsystem-8irvy2ghqy8spbmwp96t8i.streamlit.app/" class="btn-primary" target="_blank" rel="noopener">Launch the Demo</a>
       </div>
     </div>
   </section>
@@ -388,9 +294,8 @@
     <div class="section-header fade-up">
       <div>
         <div class="section-label">What We Solve</div>
-        <h2 class="section-title">Five Questions, <em>Answered</em></h2>
+        <h2 class="section-title">What <em>Inventory Decision Intelligence</em> Answers</h2>
       </div>
-      <p class="section-desc">Our solutions address core supply chain decisions.</p>
     </div>
     <div class="questions-grid">
       <div class="question-card fade-up">
@@ -429,7 +334,7 @@
         </div>
         <div class="question-word">When?</div>
         <div class="question-divider"></div>
-        <div class="question-desc">Replenishment timing, factoring in supplier lead times.</div>
+        <div class="question-desc">Replenishment timing, shaped by multiple interacting constraints.</div>
       </div>
       <div class="question-card fade-up">
         <div class="question-num">04</div>
@@ -441,7 +346,7 @@
         </div>
         <div class="question-word">Where?</div>
         <div class="question-divider"></div>
-        <div class="question-desc">Where to hold inventory across the network — factory, DC, warehouse, or store.</div>
+        <div class="question-desc">Where to hold inventory across the network.</div>
       </div>
       <div class="question-card fade-up">
         <div class="question-num">05</div>
@@ -455,7 +360,7 @@
         </div>
         <div class="question-word">Who?</div>
         <div class="question-divider"></div>
-        <div class="question-desc">Which vendors to source from and which customer segments to prioritise.</div>
+        <div class="question-desc">Which vendors to source from.</div>
       </div>
     </div>
   </section>
@@ -555,7 +460,6 @@
         <div class="section-label">How We Work</div>
         <h2 class="section-title">Our Engagement <em>Model</em></h2>
       </div>
-      <p class="section-desc">A structured, iterative approach to solving pain points.</p>
     </div>
     <div class="flowchart fade-up">
       <div class="flow-rail"></div>
@@ -586,7 +490,7 @@
           </div>
           <div class="flow-stem"></div>
           <div class="flow-content">
-            <div class="flow-node-name">Proof of <em>Concept</em><span class="flow-caret"></span></div>
+            <div class="flow-node-name">Proof of <em>Value</em><span class="flow-caret"></span></div>
             <div class="flow-node-desc">Develop a focused pilot use case to demonstrate tangible, real-world value backed by historical data and analytics.</div>
           </div>
         </div>
@@ -616,7 +520,7 @@
           </div>
           <div class="flow-stem"></div>
           <div class="flow-content">
-            <div class="flow-node-name">Scalable <em>Implementation</em><span class="flow-caret"></span></div>
+            <div class="flow-node-name">Live <em>Implementation</em><span class="flow-caret"></span></div>
             <div class="flow-node-desc">Seamless deployment of the solution across business units.</div>
           </div>
         </div>
